@@ -1,17 +1,24 @@
 # Overview
 
-This is a modern, interactive portfolio website for Anaswara Raghuthaman, a Software Engineer. The portfolio features advanced visual animations including Three.js particle systems, typing animations, dynamic gradient backgrounds, floating geometric shapes, and interactive components like testimonial carousels and work experience slideshows. The site is built as a static frontend application with no backend server requirements, designed to showcase professional experience, projects, skills, and testimonials with stunning visual effects.
+This is a modern, interactive portfolio website for Anaswara Raghuthaman, a Software Engineer, wrapped in an immersive MacBook screen frame design. The portfolio features advanced visual animations including a terminal-style introduction, Three.js particle systems, typing animations, interactive skill tags, automatic work experience slideshows, and engaging testimonials. The site is built as a static frontend application with no backend server requirements, designed to showcase professional experience, projects, skills, achievements, and testimonials with stunning visual effects and maximum interactivity.
 
 # Recent Changes
 
-**November 7, 2025**
+**November 7, 2025 - Major Redesign**
+- Implemented MacBook screen frame wrapper around entire portfolio (screen bezel, camera dot, base, notch)
+- Redesigned hero section with creative terminal-style introduction featuring:
+  - Terminal window with command prompts (`whoami`, `cat skills.txt`, `echo $PASSION`)
+  - Character-by-character typing animations
+  - Interactive skill tags with hover effects
+  - Dynamic gradient background outside the MacBook frame
+- Removed Services section completely as requested
+- Added new Achievements section featuring Awards, Leadership, and Experience cards
+- Fixed testimonial expansion bug where navigating between testimonials caused layout issues
+- Enhanced testimonials with proper collapse/expand state management
 - Implemented automatic image slideshows in work experience timeline (3 images per job, 3.5s auto-rotation)
-- Created creative animated hero section with typing animation, dynamic gradient background, and floating shapes
-- Enhanced Three.js particle system with mouse-responsive interactions
 - Added smooth fade transitions (1s duration) between slideshow images
-- Fixed all image references with hosted placeholder URLs (About section profile and testimonial avatars)
-- Implemented responsive design with mobile-optimized layouts
-- Created comprehensive README documentation
+- Implemented responsive design with mobile-optimized MacBook frame
+- Updated all styling with modern glassmorphism and shadow effects
 
 # User Preferences
 
@@ -48,11 +55,22 @@ Preferred communication style: Simple, everyday language.
 
 ## Component Architecture
 
-**Hero Section**:
-- Layered visual system (3D canvas + CSS particles + floating shapes + text content)
-- Typing animation with cursor effect
-- Glass-morphism CTA button design
-- Dynamic gradient background cycling through color palettes
+**MacBook Frame Design**:
+- Realistic MacBook screen bezel with dark border and subtle rounded corners
+- Camera dot at top center with radial gradient effect
+- MacBook base (keyboard/trackpad area) with gradient styling
+- MacBook notch (hinge) at bottom for realistic device appearance
+- 3D perspective transforms on hover for depth effect
+- All content wrapped inside the MacBook screen frame
+
+**Hero Section (Terminal-Style Introduction)**:
+- Terminal window design with command prompt aesthetics
+- Three command sequences: `whoami`, `cat skills.txt`, `echo $PASSION`
+- Character-by-character typing animations with blinking cursor
+- Interactive skill tags with hover effects (from skills.txt command)
+- Layered visual system (3D canvas + CSS particles + floating shapes)
+- Dynamic gradient background outside the MacBook frame
+- Glass-morphism terminal window design
 
 **Work Experience Timeline**:
 - Automatic image slideshows (3 images per position)

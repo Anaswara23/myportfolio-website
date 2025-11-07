@@ -23,6 +23,7 @@ body {
   margin: 0 auto;
   perspective: 2000px;
   animation: floatIn 1s ease-out;
+  position: relative;
 }
 
 @keyframes floatIn {
