@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Anaswara Raghuthaman - Portfolio</title>
+
+  <!-- Google Fonts (Optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <nav class="navbar">
+      <h1>Anaswara Raghuthaman</h1>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <!-- Resume opens in a new tab -->
+        <a href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION with Three.js Canvas -->
+  <section class="hero-section">
+    <!-- 3D canvas container -->
+    <div id="three-canvas-container"></div>
+    <div class="hero-text">
+      <h2>Hello World! 
+        I'm Anaswara Raghuthaman</h2>
+      <p>
+        A passionate <strong>Software Engineer</strong> creating modern, performant, 
+        and visually stunning digital experiences.
+      </p>
+      <a href="#contact" class="hero-cta">Let's Connect</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h3>About Me</h3>
+    <div class="about-content">
+      <img
+        src="mypic.png"
+        alt="Your Portrait"
+        class="profile-pic"
+      />
+      <div class="about-text">
+        <p>
+          Hey there! I’m Anaswara Raghuthaman, a detail-oriented software engineer who loves 
+          building scalable web applications and exploring cutting-edge technologies. 
+          From crafting sleek front-end interfaces to designing robust back-end 
+          architectures, I enjoy every step of the development process.
+        </p>
+        <p>
+          When I’m not coding, you’ll find me making new friends, vlogging or travelling to a new place!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services">
+    <h3>Services</h3>
+    <div class="services-grid">
+      <div class="service-box">
+        <h4>Web Development</h4>
+        <p>
+          Modern, responsive, and secure websites powered by best practices 
+          and the latest technologies.
+        </p>
+      </div>
+      <div class="service-box">
+        <h4>3D Integration</h4>
+        <p>
+          Enhance your site’s interactivity with 3D models, animations, and 
+          immersive experiences using Three.js.
+        </p>
+      </div>
+      <div class="service-box">
+        <h4>API & Integrations</h4>
+        <p>
+          I connect your product with third-party services for a seamless, 
+          feature-packed user experience.
+        </p>
+      </div>
+      <div class="service-box">
+        <h4>Consulting</h4>
+        <p>
+          Ready to tackle your biggest software challenges? I'll help you 
+          strategize and build the right solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE SECTION -->
+<section id="work-experience">
+    <h3>Work Experience</h3>
+    <p class="work-intro">
+      I enjoy working on challenging projects with talented people!
+    </p>
+  
+    <div class="timeline-container">
+      <!-- Timeline Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <!-- Company logo (50x50 or so). Adjust size in CSS as needed -->
+          <img src="https://www.iaff.org/wp-content/uploads/2024/02/iaff-logo-fullcolor-Print-2-240x240.png" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">June 2025- Aug 2025 </span>
+          <h4>WordPress Developer <span> @ International Assocaition of Fire Fighters </span></h4>
+          <ul>
+            <li>Translated and updated 500+ multilingual pages (French & Spanish) and fixed layouts for 700+ news pages, improving
+              accessibility, consistency, and SEO compliance.</li>
+            <li>Researched search keywords (Google Trends + Excel visualizations) to optimize WEP & GPO site performance.</li>
+            <li>Developed the <a href="https://www.iaff.org/apprenticeship/" target="_blank">IAFF Fire and EMS Apprenticeship Program</a> webpage and supported WordPress site maintenance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <!-- Company logo (50x50 or so). Adjust size in CSS as needed -->
+          <img src="https://cdn.freelogovectors.net/wp-content/uploads/2023/06/gw_george-washington-university_logo-freelogovectors.net_.png" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">Nov 2024 - Present</span>
+          <h4>Technical Assistant - II <span> @ The George Washington University </span></h4>
+          <ul>
+            <li>Deliver technical support to over 25,000 students and staff.</li>
+            <li>Resolve network, hardware, and software issues while managing assets, user accounts, OS imaging, and installations.</li>
+            <li>Monitor IT support tickets using real-time dashboards, analyzing trends to enhance response times and improve service
+              delivery.</li>
+          </ul>
+          <p class="timeline-extra">
+            <strong>Showcase Video:</strong><br />
+            <a href="https://youtube.com/" target="_blank">Watch on YouTube</a>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Timeline Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <img src="https://www.portaone.com/wp-content/uploads/2022/09/Logo-Oracle-1.webp" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jul 2023 - Jul 2024</span>
+          <h4>Configuration Analyst <span>@ Oracle</span></h4>
+          <ul>
+            <li>Configured and deployed Cerner Millennium Tools for Enterprise Scheduling Management (ESM) solutions, supporting
+              successful go-lives for healthcare clients across the UK, Australia, and the Middle East.</li>
+            <li>Performed data preparation, analysis, and system configuration, identifying and resolving software bugs to reduce post-go-
+              live issues by 20%.</li>
+            <li>Executed build audit testing and utilized tools such as MS Excel, Bedrock, SchTools, DiscernVisualDeveloper,
+              CoreCodeBuilder, and PuTTY to streamline workflows, improving task efficiency by 15%.</li>
+            <li>Recognized with the <b>'Seamless Execution Award’</b> during Customer Service Week 2023 for delivering exceptional
+              performance in high-pressure scenarios.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Timeline Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <img src="https://www.portaone.com/wp-content/uploads/2022/09/Logo-Oracle-1.webp" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jan 2023 - Jul 2023</span>
+          <h4>System Intern <span>@ Oracle</span></h4>
+          <ul>
+            <li>Assisted with troubleshooting, configuring systems, and providing technical support for software integrations and UK
+              projects.</li>
+            <li>Collaborated with cross-functional teams ensuring optimized workflows and improved service.</li>
+            <li>Tools: MS Excel, SchTools, DiscernVisualDeveloper, SchapptBook, Putty, TechPortal, TCompare, Jira, securelink.</li>
+            
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Timeline Item 4 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <img src="https://media.instahyre.com/images/profile/base/employer/3419/eae62a851d/logo_round_blue.webp" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jun 2022 - Jul 2022</span>
+          <h4>Software Engineer Intern <span>@ Betsol</span></h4>
+          <ul>
+            <li>Built real-time proctoring capabilities for online tests using AWS S3 in the Swiftcode app, ensuring better exam monitoring.</li>
+            <li>Devised browser compatibility features using Java in Play framework to enhance user experience across platforms.</li>
+          </ul>
+        </div>
+      </div>
+    
+
+        <!-- Timeline Item 5 -->
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <img src="https://miro.medium.com/v2/resize:fit:200/1%2AzUk9tVv_7kOqbhqUdkxFLQ.png" alt="Company Logo" />
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-date">May 2021 - Jun 2021</span>
+          <h4>Web Development Intern <span>@ The Sparks Foundation</span></h4>
+          <ul>
+            <li>Built a responsive payment gateway with seamless transactions and automated email receipts.</li>
+            <l1>Used JavaScript frameworks, Bootstrap, HTML5, and CSS3 for performance and mobile compatibility.</l1>
+            <l1>Mentored 5+ developers through pair programming to improve code quality and collaboration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+      <div class="project-card" >
+        <img
+          src="https://via.placeholder.com/400x200"
+          alt="Project 1"
+          class="project-image"
+        />
+        <div class="project-info">
+          <h4>Project One</h4>
+          <p>
+            A sleek, fast-loading web platform built with React and Node.js, 
+            featuring real-time data visualization.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://via.placeholder.com/400x200"
+          alt="Project 2"
+          class="project-image"
+        />
+        <div class="project-info">
+          <h4>Project Two</h4>
+          <p>
+            A mobile-friendly e-commerce site built with Next.js and integrated 
+            with popular payment gateways.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://via.placeholder.com/400x200"
+          alt="Project 3"
+          class="project-image"
+        />
+        <div class="project-info">
+          <h4>Project Three</h4>
+          <p>
+            An interactive 3D product configurator using Three.js, enabling users 
+            to customize and preview items in real-time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+ <section id="testimonials">
+  <h3>Testimonials</h3>
+
+  <div class="testimonial-carousel">
+
+    <!-- left arrow -->
+    <button class="nav-btn left-btn">&#10094;</button>
+
+    <!-- visible window -->
+    <div class="testimonial-wrapper">
+      <div class="testimonial-track">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <img src="Temba Siwela.jpeg" alt="Person 1" class="profile">
+            <div>
+              <h4>Temba Siwela</h4>
+              <p><i>Principal Consultant at Oracle</i></p>
+            </div>
+          </div>
+          <!-- The full text is hidden initially. --> 
+           <p class="testimonial-text"> 
+            <i>"I’ve had the pleasure of working with Anaswara at Oracle, and from the moment you meet her, you’re immediately struck by her enthusiasm. <br> <br>
+              
+              She is consistently positive, cheerful, and a true delight to work with. 
+              During her time in our International Configuration Centre team, Anaswara consistently delivered exceptional work. She is committed to producing high-quality results and demonstrates a strong work ethic in everything she does. Her communication skills are excellent-clear, transparent, and effective. Anaswara also possesses strong leadership abilities, readily taking charge when necessary and delegating tasks with ease. <br><br>
+              I have always been able to rely on Anaswara to deliver solid configuration, well-thought-out analysis and auditing.
+              She is not only a hard worker but also goes above and beyond to support her colleagues and our clients. On numerous occasions, she has demonstrated a willingness to contribute and lend a hand whenever needed. <br> <br>
+              Anaswara played an integral role in multiple concurrent projects, and her involvement was key to our team's outstanding success. She consistently added value and was a dependable asset to the team. <br><br>
+              Anaswara is truly an invaluable asset to any organization, and I have no doubt she will continue to excel in whatever she pursues. I wish her all the best in her studies and future career." </i> 
+            </p> 
+            <span class="read-more" aria-expanded="false">Read more</span>
+          </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <img src="Chris Nyame.jpeg" alt="Person 2" class="profile">
+            <div>
+              <h4>Chris Nyame</h4>
+              <p><i>Principal Consultant at Oracle Cerner</i></p>
+            </div>
+          </div>
+          <p class="testimonial-text"> <br>
+           <i> "I have had the pleasure of working closely with Anaswara in our PAS configuration team, and I am consistently impressed by her exceptional abilities. <br> Anaswara is a thorough professional with a remarkable eye for detail, ensuring that every task she undertakes is executed flawlessly. Her dedication to accuracy and quality is truly exquisite, setting a high standard for her peers.<br><br>
+
+            Highly reliable and dependable, Anaswara consistently delivers outstanding results, often exceeding expectations. Her commitment to excellence is matched by her ability to think critically and solve complex problems, making her an invaluable asset to our team.<br><br>
+
+            Moreover, Anaswara exhibits strong leadership qualities, demonstrating the potential to be a leader in the making. She effortlessly takes initiative, motivates her colleagues, and contributes to a collaborative and productive work environment.<br><br>
+
+            I wholeheartedly recommend Anaswara for any challenging role. Her skills, reliability, and leadership potential make her an excellent candidate for growth and success in any organization.
+
+            I will personally miss you being in the team and amongst us. but I wish you the very best on your journey, I have no doubt you will be successful in anything you do.""
+          </p></i>
+          <span class="read-more" aria-expanded="false">Read more</span>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <img src="Meghan.jpeg" alt="Person 3" class="profile">
+            <div>
+              <h4>Meghan BouHabib</h4>
+              <p><i>Deputy Director, Communications at International Association of Fire Fighters</i></p>
+            </div>
+          </div>
+          <p class="testimonial-text"><br>
+            
+           <i> “I had the pleasure of working with Anaswara during her three-month internship with us this summer, and she was an incredible addition to the team. <br><br>
+            
+
+            She jumped right in to support updates and improvements to iaff.org in WordPress, bringing enthusiasm, reliability, and a genuine eagerness to learn every step of the way. 
+            Anaswara handled every task with professionalism, met deadlines with ease, and quickly became someone we could count on.<br><br>
+            
+            Any team would be lucky to have her. I can’t wait to see all the great things she accomplishes next.”
+          </p></i>
+          <span class="read-more" aria-expanded="false">Read more</span>
+        </div>
+
+      </div><!-- /.testimonial-track -->
+    </div><!-- /.testimonial-wrapper -->
+
+    <!-- right arrow -->
+    <button class="nav-btn right-btn">&#10095;</button>
+
+    <!-- dots -->
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div><!-- /.testimonial-carousel -->
+</section>
+
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <p class="contact-desc">
+      Ready to discuss your next big project or just want to say hello?
+      <br />
+      Feel free to drop me a message or connect via social media.
+    </p>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Anaswara Raghuthaman. All Rights Reserved.</p>
+    <p>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://github.com/yourprofile" target="_blank" rel="noopener">GitHub</a> |
+      <a href="#contact">Email</a>
+    </p>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
