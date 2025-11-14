@@ -571,6 +571,7 @@ section h3::after {
   line-height: 1.8;
 }
 
+
 #work-experience {
   background: white;
   padding: 3rem 1.5rem;
@@ -811,6 +812,26 @@ section h3::after {
   line-height: 1.6;
 }
 
+.project-carousel {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.projects-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.projects-track .project-card {
+  flex: 0 0 calc((100% - 4rem) / 3); /* shows EXACTLY 3 cards */
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -829,6 +850,15 @@ section h3::after {
 .project-card:hover {
   transform: translateY(-8px);
 }
+
+.project-card-inner {
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-card-inner {
+  transform: translateY(-8px); /* only move inner content */
+}
+
 
 .project-image {
   width: 100%;
