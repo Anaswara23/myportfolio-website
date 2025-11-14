@@ -90,3 +90,68 @@ function initTestimonialCarousel() {
 
   update();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projectCarousel = document.querySelector(".project-carousel");
+  const projectTrack = projectCarousel.querySelector(".projects-track");
+  const projectCards = projectTrack.querySelectorAll(".project-card");
+  const leftBtn = projectCarousel.querySelector(".nav-btn.left-btn");
+  const rightBtn = projectCarousel.querySelector(".nav-btn.right-btn");
+
+  let currentProjectIndex = 0;
+  const visibleCount = 3;
+  const cardWidth = projectCards[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(projectTrack).gap) || 0;
+
+  let autoSlideInterval;
+
+  function updateProjects() {
+    const offset = -(cardWidth + gap) * currentProjectIndex;
+    projectTrack.style.transform = `translateX(${offset}px)`;
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      if (currentProjectIndex < projectCards.length - visibleCount) {
+        currentProjectIndex++;
+      } else {
+        currentProjectIndex = 0; // loop back to start
+      }
+      updateProjects();
+    }, 3000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // stop current interval
+    startAutoSlide(); // restart after user interaction
+  }
+
+  rightBtn.addEventListener("click", () => {
+    if (currentProjectIndex < projectCards.length - visibleCount) {
+      currentProjectIndex++;
+      updateProjects();
+      resetAutoSlide();
+    }
+  });
+
+  leftBtn.addEventListener("click", () => {
+    if (currentProjectIndex > 0) {
+      currentProjectIndex--;
+      updateProjects();
+      resetAutoSlide();
+    }
+  });
+
+  // Start auto-slide initially
+  startAutoSlide();
+
+  // Optional: recalc on resize for responsive behavior
+  window.addEventListener("resize", () => {
+    if (currentProjectIndex > projectCards.length - visibleCount) {
+      currentProjectIndex = projectCards.length - visibleCount;
+      if (currentProjectIndex < 0) currentProjectIndex = 0;
+      updateProjects();
+    }
+  });
+});
+
