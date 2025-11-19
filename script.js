@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentProjectIndex = 0; // loop back to start
       }
       updateProjects();
-    }, 3000);
+    }, 6000);
   }
 
   function resetAutoSlide() {
