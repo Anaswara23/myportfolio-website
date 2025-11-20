@@ -145,6 +145,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.5rem;
+  position: relative;
 }
 
 .browser-controls {
@@ -182,6 +183,7 @@ header {
 .nav-links {
   display: flex;
   gap: 1.5rem;
+  position: relative;
 }
 
 .nav-links a {
@@ -210,6 +212,19 @@ header {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Navigation Indicator */
+.nav-indicator {
+  position: absolute;
+  top: -6px;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+  z-index: 10;
+  left: 0;
 }
 
 .intro-section {
@@ -733,6 +748,9 @@ section h3::after {
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
 }
 
 .achievement-card::before {
@@ -748,6 +766,11 @@ section h3::after {
 .achievement-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.achievement-card:hover .achievement-list::-webkit-scrollbar-thumb {
+  background: #5a67d8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .achievement-icon {
@@ -770,13 +793,50 @@ section h3::after {
   text-align: center;
   font-size: 1.5rem;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+/* Add scroll indicator */
+.achievement-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.9));
+  pointer-events: none;
+  border-radius: 0 0 16px 16px;
 }
 
 .achievement-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.achievement-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.achievement-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.achievement-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.achievement-list::-webkit-scrollbar-thumb:hover {
+  background: #5a67d8;
 }
 
 .achievement-item {
