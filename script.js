@@ -1,7 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   initWorkExperienceSlideshows();
   initTestimonialCarousel();
+  initEmailJS();
 });
+
+// EmailJS Configuration
+function initEmailJS() {
+  // Initialize EmailJS with your public key (you'll get this from EmailJS dashboard)
+  emailjs.init("UAxfcEEWtWpQurl9C"); // Replace with your actual public key
+  
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.querySelector('.btn-text');
+  const btnLoading = document.querySelector('.btn-loading');
+  const formStatus = document.getElementById('form-status');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    submitBtn.disabled = true;
+    formStatus.innerHTML = '';
+    
+    // Send email using EmailJS
+    emailjs.sendForm(
+      'service_8v80k9j',    // Replace with your service ID
+      'template_w6e343y',   // Replace with your template ID
+      form
+    ).then(function(response) {
+      // Success
+      console.log('SUCCESS!', response.status, response.text);
+      formStatus.innerHTML = '<p style="color: #4CAF50;">✅ Message sent successfully! I\'ll get back to you soon.</p>';
+      form.reset();
+    }, function(error) {
+      // Error
+      console.log('FAILED...', error);
+      formStatus.innerHTML = '<p style="color: #f44336;">❌ Failed to send message. Please try again or email me directly.</p>';
+    }).finally(function() {
+      // Reset button state
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+      submitBtn.disabled = false;
+    });
+  });
+}
 
 function initWorkExperienceSlideshows() {
   const slideshows = document.querySelectorAll('.timeline-slideshow');
@@ -118,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentProjectIndex = 0; // loop back to start
       }
       updateProjects();
-    }, 6000);
+    }, 12000);
   }
 
   function resetAutoSlide() {
@@ -144,6 +188,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start auto-slide initially
   startAutoSlide();
+
+  // Pause auto-slide when hovering over the carousel
+  projectCarousel.addEventListener("mouseenter", () => {
+    clearInterval(autoSlideInterval);
+  });
+
+  // Resume auto-slide when mouse leaves the carousel
+  projectCarousel.addEventListener("mouseleave", () => {
+    startAutoSlide();
+  });
 
   // Optional: recalc on resize for responsive behavior
   window.addEventListener("resize", () => {

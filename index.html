@@ -337,6 +337,57 @@
             <button class="nav-btn left-btn">&#10094;</button>
             <div class="projects-wrapper">
               <div class="projects-track">
+
+                <div class="project-card">
+                  <div class="project-card-inner">
+                  <img
+                    src="BarterBrAIn logo (1).png"
+                    alt="Project 6"
+                    class="project-image"
+                  />
+                  <div class="project-info">
+                    <h4>BarterBrAIn: Barter Better with AI</h4>
+                    <p>
+                      An AI-driven barter platform for students featuring smart item valuation, an AI negotiation coach, secure payment handling via Capital One Hackathon API (Nessie), and a clean liquid-glass UI built in Flutter.
+                    </p>
+                    <a href="https://github.com/Anaswara23/BarterBrAIn" target="_blank">GitHub</a>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-card-inner">
+                  <img
+                    src="https://www.rappler.com/tachyon/r3-assets/FDCA54920797456FB491446F9E636CA6/img/3EF47701BA8E4AEBA48AD92CE2C28DFE/20200418-imf-world-bank.jpg"
+                    alt="Project 4"
+                    class="project-image"
+                  />
+                  <div class="project-info">
+                    <h4>Text Mining for Governance and Compliance</h4>
+                    <p>
+                      An International Development Bank (IDB) sponsored NLP project that flags risks and compliance issues in project documents using BERT transformers, NER, and topic modeling.
+                    </p>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-card-inner">
+                  <img
+                    src="Portfolio Website.png"
+                    alt="Project 5"
+                    class="project-image"
+                  />
+                  <div class="project-info">
+                    <h4>Portfolio Website</h4>
+                    <p>
+                      A modern, interactive portfolio website showcasing professional experience, projects, and skills with stunning visual animations.
+                    </p>
+                    <a href="https://github.com/Anaswara23/myportfolio-website" target="_blank">GitHub</a>
+                  </div>
+                </div>
+                </div>
+
                 <div class="project-card">
                   <div class="project-card-inner">
                   <img
@@ -350,23 +401,6 @@
                       iOS app connecting pet owners for socialization and personalized pet care, featuring location-based services and e-commerce. (Swift, Xcode, MVC)
                     </p>
                     <a href="https://github.com/Anaswara23/PAWFECT" target="_blank">GitHub</a>
-                  </div>
-                  </div>
-                </div>
-
-                <div class="project-card">
-                  <div class="project-card-inner">
-                  <img
-                    src="BarterBrAIn logo (1).png"
-                    alt="Project 6"
-                    class="project-image"
-                  />
-                  <div class="project-info">
-                    <h4>BarterBrAIn: Barter Better with AI</h4>
-                    <p>
-                      An AI-driven barter platform for students featuring smart item valuation, an AI negotiation coach, secure payment handling via Nessie, and a clean liquid-glass UI built in Flutter.
-                    </p>
-                    <a href="https://github.com/Anaswara23/BarterBrAIn" target="_blank">GitHub</a>
                   </div>
                   </div>
                 </div>
@@ -403,41 +437,6 @@
                   </div>
                   </div>
                 </div>
-
-                <div class="project-card">
-                  <div class="project-card-inner">
-                  <img
-                    src="https://www.rappler.com/tachyon/r3-assets/FDCA54920797456FB491446F9E636CA6/img/3EF47701BA8E4AEBA48AD92CE2C28DFE/20200418-imf-world-bank.jpg"
-                    alt="Project 4"
-                    class="project-image"
-                  />
-                  <div class="project-info">
-                    <h4>Text Mining for Governance and Compliance</h4>
-                    <p>
-                      An International Development Bank–sponsored NLP project that flags risks and compliance issues in project documents using transformers, NER, and topic modeling.
-                    </p>
-                  </div>
-                  </div>
-                </div>
-
-                <div class="project-card">
-                  <div class="project-card-inner">
-                  <img
-                    src="Portfolio Website.png"
-                    alt="Project 5"
-                    class="project-image"
-                  />
-                  <div class="project-info">
-                    <h4>Portfolio Website</h4>
-                    <p>
-                      A modern, interactive portfolio website showcasing professional experience, projects, and skills with stunning visual animations.
-                    </p>
-                    <a href="https://github.com/Anaswara23/myportfolio-website" target="_blank">GitHub</a>
-                  </div>
-                </div>
-                </div>
-
-                
           
               </div>
             </div>
@@ -600,19 +599,23 @@
             <br />
             Feel free to drop me a message or connect via social media.
           </p>
-          <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
+          <form class="contact-form" id="contact-form">
+            <input type="text" name="from_name" placeholder="Your Name" required />
+            <input type="email" name="from_email" placeholder="Your Email" required />
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit" id="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display: none;">Sending...</span>
+            </button>
+            <div class="form-status" id="form-status"></div>
           </form>
         </section>
 
         <footer>
           <p>&copy; 2025 Anaswara Raghuthaman. All Rights Reserved.</p>
           <p>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> |
-            <a href="https://github.com/yourprofile" target="_blank" rel="noopener">GitHub</a> |
+            <a href="https://www.linkedin.com/in/anaswara-r/" target="_blank" rel="noopener">LinkedIn</a> |
+            <a href="https://github.com/Anaswara23" target="_blank" rel="noopener">GitHub</a> |
             <a href="#contact">Email</a>
           </p>
         </footer>
@@ -623,6 +626,8 @@
     <div class="macbook-notch"></div>
   </div>
 
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

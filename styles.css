@@ -842,7 +842,7 @@ section h3::after {
 .project-card {
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   overflow: hidden;
   transition: transform 0.3s;
 }
@@ -853,10 +853,6 @@ section h3::after {
 
 .project-card-inner {
   transition: transform 0.3s;
-}
-
-.project-card:hover .project-card-inner {
-  transform: translateY(-8px); /* only move inner content */
 }
 
 
@@ -1146,6 +1142,24 @@ section h3::after {
 .contact-form button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.contact-form button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.form-status p {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
 }
 
 footer {
