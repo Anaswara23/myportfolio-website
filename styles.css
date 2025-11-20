@@ -6,24 +6,26 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
   color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .macbook-container {
   max-width: 1400px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   perspective: 2000px;
   animation: floatIn 1s ease-out;
   position: relative;
+  max-height: 95vh;
 }
 
 @keyframes floatIn {
@@ -51,6 +53,7 @@ body {
   overflow: hidden;
   transform: rotateX(2deg);
   transition: transform 0.5s ease;
+  max-height: calc(100vh - 80px);
 }
 
 .macbook-screen:hover {
@@ -212,19 +215,6 @@ header {
 
 .nav-links a:hover::after {
   width: 100%;
-}
-
-/* Navigation Indicator */
-.nav-indicator {
-  position: absolute;
-  top: -6px;
-  width: 8px;
-  height: 8px;
-  background: #333;
-  border-radius: 50%;
-  transition: left 0.3s ease;
-  z-index: 10;
-  left: 0;
 }
 
 .intro-section {

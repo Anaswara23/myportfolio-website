@@ -5,111 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollNavigation();
 });
 
-// Scroll-based Navigation Indicator
-function initScrollNavigation() {
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  const navIndicator = document.querySelector('.nav-indicator');
-  const screenContent = document.querySelector('.screen-content');
-  
-  if (!navIndicator || !screenContent) {
-    console.log('Nav indicator or screen content not found');
-    return;
-  }
-  
-  const sections = [];
-  navLinks.forEach(link => {
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      sections.push({ link, section: targetSection, id: targetId });
-    }
-  });
-
-  function updateNavIndicator() {
-    const scrollPosition = screenContent.scrollTop + 150; // Use container's scroll position
-    
-    let activeSection = sections[0]; // Default to first section
-    
-    // Find the section currently in view
-    for (let i = 0; i < sections.length; i++) {
-      const section = sections[i].section;
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-      
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        activeSection = sections[i];
-        break;
-      }
-    }
-    
-    // Move indicator to active link
-    if (activeSection && activeSection.link) {
-      const navLinksContainer = document.querySelector('.nav-links');
-      const linkRect = activeSection.link.getBoundingClientRect();
-      const containerRect = navLinksContainer.getBoundingClientRect();
-      const leftPosition = linkRect.left - containerRect.left + (linkRect.width / 2) - 4;
-      navIndicator.style.left = leftPosition + 'px';
-      
-      console.log('Active section:', activeSection.id, 'Scroll position:', scrollPosition);
-    }
-  }
-  
-  // Throttled scroll handler - listen to screen content scroll
-  let ticking = false;
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateNavIndicator();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
-  
-  screenContent.addEventListener('scroll', onScroll);
-  window.addEventListener('resize', updateNavIndicator);
-  
-  // Set initial position after a short delay
-  setTimeout(() => {
-    updateNavIndicator();
-  }, 1000);
-  
-  // Smooth scroll for navigation links - scroll within screen content
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      
-      // Skip if it's the resume link (external)
-      if (href.includes('.pdf')) {
-        return; // Let the default behavior handle it
-      }
-      
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const targetSection = document.getElementById(targetId);
-      
-      if (targetSection) {
-        const headerOffset = 80;
-        const elementPosition = targetSection.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
-        
-        console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
-        
-        // Scroll within the screen content container
-        screenContent.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Update indicator immediately
-        setTimeout(() => {
-          updateNavIndicator();
-        }, 100);
-      }
-    });
-  });
-}
-
 // EmailJS Configuration
 function initEmailJS() {
   // Initialize EmailJS with your public key (you'll get this from EmailJS dashboard)
@@ -314,4 +209,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Simple Navigation functionality
+function initScrollNavigation() {
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const screenContent = document.querySelector('.screen-content');
+  
+  if (!screenContent) {
+    console.log('Screen content not found');
+    return;
+  }
+  
+  // Smooth scroll for navigation links - scroll within screen content
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      
+      // Skip if it's the resume link (external)
+      if (href.includes('.pdf')) {
+        return; // Let the default behavior handle it
+      }
+      
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        const headerOffset = 80;
+        const elementPosition = targetSection.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+        
+        console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
+        
+        // Scroll within the screen content container
+        screenContent.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
 
