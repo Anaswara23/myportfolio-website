@@ -24,8 +24,8 @@ function initTestimonialCarousel() {
   const track = document.querySelector('.testimonial-track');
   const slides = document.querySelectorAll('.testimonial');
   const dots = document.querySelectorAll('.carousel-dots .dot');
-  const prevBtn = document.querySelector('.left-btn');
-  const nextBtn = document.querySelector('.right-btn');
+  const prevBtn = document.querySelector('.testimonial-carousel .left-btn');
+  const nextBtn = document.querySelector('.testimonial-carousel .right-btn');
   let index = 0;
 
   function collapseAllTestimonials() {
