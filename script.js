@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollNavigation() {
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   const navIndicator = document.querySelector('.nav-indicator');
+  const screenContent = document.querySelector('.screen-content');
   
-  if (!navIndicator) {
-    console.log('Nav indicator not found');
+  if (!navIndicator || !screenContent) {
+    console.log('Nav indicator or screen content not found');
     return;
   }
   
@@ -25,7 +26,7 @@ function initScrollNavigation() {
   });
 
   function updateNavIndicator() {
-    const scrollPosition = window.scrollY + 150; // Offset for better detection
+    const scrollPosition = screenContent.scrollTop + 150; // Use container's scroll position
     
     let activeSection = sections[0]; // Default to first section
     
@@ -49,11 +50,11 @@ function initScrollNavigation() {
       const leftPosition = linkRect.left - containerRect.left + (linkRect.width / 2) - 4;
       navIndicator.style.left = leftPosition + 'px';
       
-      console.log('Active section:', activeSection.id, 'Position:', leftPosition);
+      console.log('Active section:', activeSection.id, 'Scroll position:', scrollPosition);
     }
   }
   
-  // Throttled scroll handler
+  // Throttled scroll handler - listen to screen content scroll
   let ticking = false;
   function onScroll() {
     if (!ticking) {
@@ -65,7 +66,7 @@ function initScrollNavigation() {
     }
   }
   
-  window.addEventListener('scroll', onScroll);
+  screenContent.addEventListener('scroll', onScroll);
   window.addEventListener('resize', updateNavIndicator);
   
   // Set initial position after a short delay
@@ -73,7 +74,7 @@ function initScrollNavigation() {
     updateNavIndicator();
   }, 1000);
   
-  // Smooth scroll for navigation links
+  // Smooth scroll for navigation links - scroll within screen content
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -94,7 +95,8 @@ function initScrollNavigation() {
         
         console.log('Scrolling to:', targetId, 'Position:', offsetPosition);
         
-        window.scrollTo({
+        // Scroll within the screen content container
+        screenContent.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
